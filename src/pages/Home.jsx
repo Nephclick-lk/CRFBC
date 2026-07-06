@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, Plane, Warehouse, Truck, ClipboardList, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Search, Ship, Warehouse, Truck, ClipboardList, ArrowRight, CheckCircle2 } from 'lucide-react';
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('Tracking');
@@ -54,10 +54,10 @@ export default function Home() {
           {/* Left Column */}
           <div className="md:w-1/2 flex flex-col justify-center">
             <h1 className="hero-title">
-              Seamless Border Declaration & Clearing
+              Border Declaration &<br />Clearing for Trucks & Ships
             </h1>
             <p style={{ fontSize: '18px', color: 'var(--color-text-dark)', maxWidth: '480px', marginBottom: '40px', lineHeight: '1.6', opacity: 0.85, fontWeight: '500' }}>
-              Your trusted partner for freight forwarding by land and sea, ensuring smooth, legally compliant, and rapid customs clearance.
+              Helping companies and businesses move cargo across borders legally and fast. Land and sea freight clearance, compliance, and forwarding.
             </p>
 
             {/* Tracking Widget */}
@@ -123,13 +123,13 @@ export default function Home() {
               {activeTab === 'Offices' && (
                 <div style={{ padding: '20px 0' }}>
                   <p style={{ color: 'var(--color-text-muted)', marginBottom: '16px', fontSize: '15px' }}>Contact our regional offices directly via WhatsApp for fast support:</p>
-                  <a href="https://wa.me/256782207113" target="_blank" rel="noopener noreferrer" className="btn btn-white" style={{ width: '100%', padding: '16px', fontSize: '16px', border: '1px solid var(--color-border)', marginBottom: '12px', display: 'flex', justifyContent: 'center' }}>
+                  <a href="https://wa.me/256782207113" target="_blank" rel="noopener noreferrer" className="btn btn-white" style={{ width: '100%', padding: '16px', fontSize: '16px', border: '1px solid var(--color-border)', marginBottom: '12px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="#25D366" style={{ marginRight: '8px' }}><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                    WhatsApp (+256)
+                    WhatsApp <img src="/uganda-flag.png" alt="Uganda Flag" style={{ width: '24px', height: '16px', marginLeft: '8px', objectFit: 'cover', borderRadius: '2px', border: '1px solid #ddd' }} />
                   </a>
-                  <a href="https://wa.me/243995663282" target="_blank" rel="noopener noreferrer" className="btn btn-white" style={{ width: '100%', padding: '16px', fontSize: '16px', border: '1px solid var(--color-border)', display: 'flex', justifyContent: 'center' }}>
+                  <a href="https://wa.me/243995663282" target="_blank" rel="noopener noreferrer" className="btn btn-white" style={{ width: '100%', padding: '16px', fontSize: '16px', border: '1px solid var(--color-border)', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="#25D366" style={{ marginRight: '8px' }}><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                    WhatsApp (+243)
+                    WhatsApp <img src="/congo-flag.png" alt="DR Congo Flag" style={{ width: '24px', height: '16px', marginLeft: '8px', objectFit: 'cover', borderRadius: '2px', border: '1px solid #ddd' }} />
                   </a>
                 </div>
               )}
@@ -151,18 +151,18 @@ export default function Home() {
             
             {/* Stats Overlaid */}
             <div className="flex flex-wrap gap-8 mt-auto ml-auto" style={{ backgroundColor: 'rgba(0,0,0,0.15)', padding: '24px 32px', borderRadius: '16px', backdropFilter: 'blur(8px)' }}>
-              <div className="stats-card">
-                <div className="stats-number">15+</div>
-                <div className="stats-label">Years Of Experience</div>
-              </div>
-              <div className="stats-card">
-                <div className="stats-number">20+</div>
-                <div className="stats-label">Borders Cleared</div>
-              </div>
-              <div className="stats-card">
-                <div className="stats-number">99.2%</div>
-                <div className="stats-label">On-Time Delivery</div>
-              </div>
+                <div className="stats-card">
+                  <div className="stats-number">15+</div>
+                  <div className="stats-label">Years in Border Clearance</div>
+                </div>
+                <div className="stats-card">
+                  <div className="stats-number">20+</div>
+                  <div className="stats-label">Border Posts Cleared</div>
+                </div>
+                <div className="stats-card">
+                  <div className="stats-number">2K+</div>
+                  <div className="stats-label">Trucks & Ships Declared</div>
+                </div>
             </div>
           </div>
 
@@ -187,13 +187,13 @@ export default function Home() {
           <div className="md:w-1/2 w-full">
             <div style={{ color: 'var(--color-primary)', fontWeight: '600', fontSize: '14px', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '16px' }}>Who We Are</div>
             <h2 className="section-title">
-              Masters of border declaration and freight forwarding.
+              Border clearance experts for trucks crossing by land and ships arriving by sea.
             </h2>
             <p style={{ color: 'var(--color-text-muted)', fontSize: '16px', lineHeight: '1.7', marginBottom: '24px' }}>
-              CRFBC is an industry leader specializing in border declaration, customs clearing, and robust freight forwarding by land and sea. We streamline complex cross-border processes, ensuring strict compliance and efficient movement of your cargo.
+              CRFBC is a border declaration and customs clearing company built for businesses that move freight across East African borders. We handle every step of the clearance process for trucks and sea containers, ensuring your cargo moves without delays, fines, or compliance issues.
             </p>
             <ul style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '32px' }}>
-              {['Expert Customs Clearing', 'Land & Sea Freight Solutions', 'Rapid Border Declaration'].map((item, idx) => (
+              {['Truck & Container Customs Clearing', 'Land Border Declaration & Compliance', 'Sea Freight Forwarding & Clearance'].map((item, idx) => (
                 <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '12px', fontWeight: '500' }}>
                   <CheckCircle2 className="text-primary" size={20} />
                   {item}
@@ -214,10 +214,10 @@ export default function Home() {
           {/* Left */}
           <div className="md:w-1/3">
             <h2 className="section-title">
-              Our Logistics<br />Services
+              Clearance &<br />Logistics Services
             </h2>
             <p style={{ color: 'var(--color-text-muted)', lineHeight: '1.6', maxWidth: '300px', fontSize: '15px' }}>
-              End-to-end solutions focused on clearing and forwarding across borders.
+              End-to-end border declaration, customs clearing, and freight forwarding for trucks and ships.
             </p>
           </div>
 
@@ -227,44 +227,44 @@ export default function Home() {
             {/* Card 1 */}
             <div className="service-card">
               <div style={{ marginBottom: '24px', color: 'var(--color-primary)' }}>
-                <Plane size={40} strokeWidth={1.5} />
+                <Truck size={40} strokeWidth={1.5} />
               </div>
-              <h3 style={{ fontSize: '20px', fontWeight: '700', marginBottom: '12px' }}>Freight Forwarding</h3>
+              <h3 style={{ fontSize: '20px', fontWeight: '700', marginBottom: '12px' }}>Truck Border Clearance</h3>
               <p style={{ color: 'var(--color-text-muted)', fontSize: '15px', lineHeight: '1.6' }}>
-                Air, Sea, And Land Freight With Optimized Routing And Cost Control.
+                Full declaration and clearing for trucks at land border posts. We handle documentation, compliance checks, and fast-track clearance.
               </p>
             </div>
 
             {/* Card 2 */}
             <div className="service-card">
               <div style={{ marginBottom: '24px', color: 'var(--color-primary)' }}>
-                <Warehouse size={40} strokeWidth={1.5} />
+                <Ship size={40} strokeWidth={1.5} />
               </div>
-              <h3 style={{ fontSize: '20px', fontWeight: '700', marginBottom: '12px' }}>Warehousing & Storage</h3>
+              <h3 style={{ fontSize: '20px', fontWeight: '700', marginBottom: '12px' }}>Sea Freight & Container Clearance</h3>
               <p style={{ color: 'var(--color-text-muted)', fontSize: '15px', lineHeight: '1.6' }}>
-                Secure, Scalable Warehousing With Real-Time Inventory Tracking.
+                End-to-end customs clearance for sea containers at port of entry. Bill of lading processing, duties, and cargo release.
               </p>
             </div>
 
             {/* Card 3 */}
             <div className="service-card">
               <div style={{ marginBottom: '24px', color: 'var(--color-primary)' }}>
-                <Truck size={40} strokeWidth={1.5} />
+                <ClipboardList size={40} strokeWidth={1.5} />
               </div>
-              <h3 style={{ fontSize: '20px', fontWeight: '700', marginBottom: '12px' }}>Last-Mile Delivery</h3>
+              <h3 style={{ fontSize: '20px', fontWeight: '700', marginBottom: '12px' }}>Border Declaration Filing</h3>
               <p style={{ color: 'var(--color-text-muted)', fontSize: '15px', lineHeight: '1.6' }}>
-                Fast And Reliable Doorstep Delivery Powered By Local Networks.
+                Accurate and fast border declaration filing for all cargo types, ensuring full compliance with customs regulations across East Africa.
               </p>
             </div>
 
             {/* Card 4 */}
             <div className="service-card">
               <div style={{ marginBottom: '24px', color: 'var(--color-primary)' }}>
-                <ClipboardList size={40} strokeWidth={1.5} />
+                <Warehouse size={40} strokeWidth={1.5} />
               </div>
-              <h3 style={{ fontSize: '20px', fontWeight: '700', marginBottom: '12px' }}>Customs Clearance</h3>
+              <h3 style={{ fontSize: '20px', fontWeight: '700', marginBottom: '12px' }}>Cargo & Logistics Management</h3>
               <p style={{ color: 'var(--color-text-muted)', fontSize: '15px', lineHeight: '1.6' }}>
-                Hassle-Free Documentation And Compliance Across Borders.
+                Coordination from loading to delivery. Track your cargo in real time with integrated logistics management and status updates.
               </p>
             </div>
 

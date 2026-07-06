@@ -9,7 +9,7 @@ export default function About() {
         <div className="container">
           <h1 className="page-title" style={{ marginBottom: '24px' }}>About CRFBC</h1>
           <p style={{ fontSize: '18px', maxWidth: '700px', margin: '0 auto', opacity: 0.9, lineHeight: '1.6' }}>
-            Your trusted partner in seamless border declaration, efficient customs clearing, and reliable freight forwarding by land and sea.
+            Border declaration and customs clearing specialists for trucks crossing by land and containers arriving by sea. Helping businesses move cargo across borders legally, fast, and without hassle.
           </p>
         </div>
       </section>
@@ -23,27 +23,27 @@ export default function About() {
           <div className="md:w-1/2">
             <div style={{ color: 'var(--color-primary)', fontWeight: '600', fontSize: '14px', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '16px' }}>Our Mission</div>
             <h2 className="section-title">
-              Bridging the Gap in Global Trade & Logistics
+              Getting trucks and ships through borders — legally and fast
             </h2>
             <p style={{ color: 'var(--color-text-muted)', fontSize: '16px', lineHeight: '1.7', marginBottom: '24px' }}>
-              At Carrefour Business (CRFBC), we specialize in mitigating the complexities of cross-border trade. Our core expertise lies in accurate border declaration, rapid customs clearance, and secure freight forwarding through both land and sea routes. We aim to empower businesses by ensuring their goods move across borders efficiently, legally, and without unnecessary delays.
+              CRFBC exists to solve one problem: moving cargo across borders without delays, fines, or confusion. We specialize in border declaration and customs clearing for trucks crossing land borders and sea containers arriving at ports. Every shipment we handle goes through rigorous compliance checks so your cargo clears on time, every time.
             </p>
             <p style={{ color: 'var(--color-text-muted)', fontSize: '16px', lineHeight: '1.7', marginBottom: '32px' }}>
-              Whether you are moving bulk cargo by sea or managing time-sensitive land freight, our experienced team provides end-to-end solutions tailored to your specific logistics needs.
+              Whether you operate a fleet of trucks moving between Uganda, DRC, Kenya, and Rwanda, or import containerized goods through Mombasa or Dar es Salaam, our team manages the full clearance process end to end. We handle documentation, duty assessment, verification, and cargo release.
             </p>
 
             <ul style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontWeight: '500' }}>
                 <CheckCircle2 className="text-primary" size={24} />
-                Comprehensive Border Declaration Services
+                Truck Border Declaration & Clearance
               </li>
               <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontWeight: '500' }}>
                 <CheckCircle2 className="text-primary" size={24} />
-                Fast and Compliant Customs Clearing
+                Sea Container Customs Processing
               </li>
               <li style={{ display: 'flex', alignItems: 'center', gap: '12px', fontWeight: '500' }}>
                 <CheckCircle2 className="text-primary" size={24} />
-                Reliable Freight Forwarding (Land & Sea)
+                Cross-Border Compliance & Logistics
               </li>
             </ul>
           </div>
@@ -62,24 +62,24 @@ export default function About() {
               <div style={{ display: 'inline-flex', padding: '16px', backgroundColor: 'rgba(223, 58, 53, 0.1)', color: 'var(--color-primary)', borderRadius: '50%', marginBottom: '24px' }}>
                 <Globe size={32} />
               </div>
-              <h3 style={{ fontSize: '20px', fontWeight: '600', marginBottom: '16px' }}>Global Reach, Local Expertise</h3>
-              <p style={{ color: 'var(--color-text-muted)', lineHeight: '1.6' }}>We leverage our international network and deep knowledge of local customs to navigate regulations effortlessly.</p>
+              <h3 style={{ fontSize: '20px', fontWeight: '600', marginBottom: '16px' }}>Border Post Expertise</h3>
+              <p style={{ color: 'var(--color-text-muted)', lineHeight: '1.6' }}>We know every border post from Mpondwe to Mutukula. Our agents are on the ground and understand local procedures.</p>
             </div>
 
             <div style={{ backgroundColor: 'white', padding: '40px', borderRadius: '16px', textAlign: 'center', boxShadow: '0 4px 15px rgba(0,0,0,0.05)' }}>
               <div style={{ display: 'inline-flex', padding: '16px', backgroundColor: 'rgba(223, 58, 53, 0.1)', color: 'var(--color-primary)', borderRadius: '50%', marginBottom: '24px' }}>
                 <Shield size={32} />
               </div>
-              <h3 style={{ fontSize: '20px', fontWeight: '600', marginBottom: '16px' }}>Compliance & Security</h3>
-              <p style={{ color: 'var(--color-text-muted)', lineHeight: '1.6' }}>We prioritize the safety of your cargo and strict adherence to international trade laws and declarations.</p>
+              <h3 style={{ fontSize: '20px', fontWeight: '600', marginBottom: '16px' }}>Compliance First</h3>
+              <p style={{ color: 'var(--color-text-muted)', lineHeight: '1.6' }}>Every declaration is accurate and fully compliant. We eliminate the risk of rejected clearances and border penalties.</p>
             </div>
 
             <div style={{ backgroundColor: 'white', padding: '40px', borderRadius: '16px', textAlign: 'center', boxShadow: '0 4px 15px rgba(0,0,0,0.05)' }}>
               <div style={{ display: 'inline-flex', padding: '16px', backgroundColor: 'rgba(223, 58, 53, 0.1)', color: 'var(--color-primary)', borderRadius: '50%', marginBottom: '24px' }}>
                 <Clock size={32} />
               </div>
-              <h3 style={{ fontSize: '20px', fontWeight: '600', marginBottom: '16px' }}>Efficiency & Timeliness</h3>
-              <p style={{ color: 'var(--color-text-muted)', lineHeight: '1.6' }}>Time is money. Our optimized routing and quick clearing processes ensure your goods arrive on time.</p>
+              <h3 style={{ fontSize: '20px', fontWeight: '600', marginBottom: '16px' }}>Speed at the Border</h3>
+              <p style={{ color: 'var(--color-text-muted)', lineHeight: '1.6' }}>We pre-clear shipments and manage documentation in advance so your trucks and containers spend less time waiting.</p>
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Truck, MapPin, Package, AlertCircle, CheckCircle2, Clock } from 'lucide-react';
+import { Truck, Ship, MapPin, Package, CheckCircle2, Clock } from 'lucide-react';
 
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState('overview');
@@ -18,7 +18,7 @@ export default function Dashboard() {
         <div className="flex justify-between items-center mb-xl">
           <div>
             <h1 className="font-headline-lg text-primary mb-xs">Partner Dashboard</h1>
-            <p className="text-on-surface-variant font-body-md">Manage your tracks, shipboarders, and live shipments.</p>
+            <p className="text-on-surface-variant font-body-md">Track your border declarations, truck movements, and sea container clearances.</p>
           </div>
           <button className="btn btn-primary shadow-sm active:scale-95">
             + Declare Shipment
@@ -49,10 +49,10 @@ export default function Dashboard() {
         {/* Stats row */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-md mb-xl">
           {[
-            { label: 'Active Shipments', value: '14', icon: Package, color: 'text-primary' },
-            { label: 'In Transit', value: '8', icon: Truck, color: 'text-secondary' },
-            { label: 'Pending Clearance', value: '3', icon: Clock, color: 'text-[#d97706]' },
-            { label: 'Action Required', value: '1', icon: AlertCircle, color: 'text-error' },
+              { label: 'Active Declarations', value: '14', icon: Package, color: 'text-primary' },
+              { label: 'Trucks in Transit', value: '8', icon: Truck, color: 'text-secondary' },
+              { label: 'Pending Clearance', value: '3', icon: Clock, color: 'text-[#d97706]' },
+              { label: 'Containers at Port', value: '4', icon: Ship, color: 'text-[#0284c7]' },
           ].map((stat, idx) => (
             <div key={idx} className="bg-surface-container-lowest p-md rounded-xl border shadow-sm flex items-center justify-between">
               <div>

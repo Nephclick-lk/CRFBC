@@ -8,7 +8,7 @@ export default function Quotes() {
         <div className="text-center mb-xl animate-fade-in">
           <h1 className="font-display-lg text-primary mb-sm">Request a Freight Quote</h1>
           <p className="font-body-lg text-on-surface-variant max-w-[600px] mx-auto">
-            Get transparent, competitive pricing for shipments across DR Congo, Uganda, and the rest of East Africa. No hidden fees.
+            Get transparent pricing for truck border clearance, sea container customs processing, and freight forwarding across East Africa. No hidden fees.
           </p>
         </div>
 

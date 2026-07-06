@@ -8,7 +8,7 @@ export default function Contact() {
         <div style={{ textAlign: 'center', marginBottom: '60px' }}>
           <h1 className="page-title" style={{ marginBottom: '16px' }}>Contact Us</h1>
           <p style={{ color: 'var(--color-text-muted)', fontSize: '18px', maxWidth: '600px', margin: '0 auto' }}>
-            We are here to help with all your border declaration, clearing, and freight forwarding needs. Reach out to us today.
+            Need to clear a truck at the border or release a container from port? Get in touch with our clearance team.
           </p>
         </div>
 
