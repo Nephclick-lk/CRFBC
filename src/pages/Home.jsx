@@ -52,12 +52,12 @@ export default function Home() {
         <div className="container flex flex-col md:flex-row gap-8 relative" style={{ height: '100%', zIndex: 2 }}>
           
           {/* Left Column */}
-          <div className="md:w-1/2 flex flex-col justify-center" style={{ marginTop: '20px' }}>
-            <h1 style={{ fontSize: '72px', fontWeight: '700', lineHeight: '1.05', marginBottom: '24px', letterSpacing: '-1px' }}>
-              From First Mile to<br />Final Delivery
+          <div className="md:w-1/2 flex flex-col justify-center">
+            <h1 className="hero-title">
+              Seamless Border Declaration & Clearing
             </h1>
             <p style={{ fontSize: '18px', color: 'var(--color-text-dark)', maxWidth: '480px', marginBottom: '40px', lineHeight: '1.6', opacity: 0.85, fontWeight: '500' }}>
-              Reliable global logistics solutions designed for speed, transparency, and peace of mind — from first mile to final delivery.
+              Your trusted partner for freight forwarding by land and sea, ensuring smooth, legally compliant, and rapid customs clearance.
             </p>
 
             {/* Tracking Widget */}
@@ -74,35 +74,65 @@ export default function Home() {
                 ))}
               </div>
 
-              <div className="radio-group">
-                <label className="radio-label">
-                  <input 
-                    type="radio" 
-                    name="trackingType"
-                    checked={trackingType === 'Container'}
-                    onChange={() => setTrackingType('Container')}
-                  />
-                  Container / Bill of Lading Number
-                </label>
-                <label className="radio-label">
-                  <input 
-                    type="radio" 
-                    name="trackingType"
-                    checked={trackingType === 'Booking Number'}
-                    onChange={() => setTrackingType('Booking Number')}
-                  />
-                  Booking Number
-                </label>
-              </div>
+              {activeTab === 'Tracking' && (
+                <>
+                  <div className="radio-group">
+                    <label className="radio-label">
+                      <input 
+                        type="radio" 
+                        name="trackingType"
+                        checked={trackingType === 'Container'}
+                        onChange={() => setTrackingType('Container')}
+                      />
+                      Container / Bill of Lading Number
+                    </label>
+                    <label className="radio-label">
+                      <input 
+                        type="radio" 
+                        name="trackingType"
+                        checked={trackingType === 'Booking Number'}
+                        onChange={() => setTrackingType('Booking Number')}
+                      />
+                      Booking Number
+                    </label>
+                  </div>
 
-              <div className="search-input-wrapper">
-                <Search size={18} />
-                <input type="text" placeholder="Enter Tracking Number" />
-              </div>
+                  <div className="search-input-wrapper">
+                    <Search size={18} />
+                    <input type="text" placeholder="Enter Tracking Number" />
+                  </div>
 
-              <button className="btn btn-primary btn-animated" style={{ width: '100%', padding: '16px', fontSize: '16px' }}>
-                Search
-              </button>
+                  <button className="btn btn-primary btn-animated" style={{ width: '100%', padding: '16px', fontSize: '16px' }}>
+                    Search
+                  </button>
+                </>
+              )}
+
+              {activeTab === 'Schedules' && (
+                <div style={{ padding: '20px 0' }}>
+                  <p style={{ color: 'var(--color-text-muted)', marginBottom: '16px', fontSize: '15px' }}>Select a date to check available departure and arrival schedules.</p>
+                  <div className="search-input-wrapper">
+                    <input type="date" style={{ paddingLeft: '16px' }} />
+                  </div>
+                  <button className="btn btn-primary btn-animated" style={{ width: '100%', padding: '16px', fontSize: '16px' }}>
+                    Check Availability
+                  </button>
+                </div>
+              )}
+
+              {activeTab === 'Offices' && (
+                <div style={{ padding: '20px 0' }}>
+                  <p style={{ color: 'var(--color-text-muted)', marginBottom: '16px', fontSize: '15px' }}>Contact our regional offices directly via WhatsApp for fast support:</p>
+                  <a href="https://wa.me/256782207113" target="_blank" rel="noopener noreferrer" className="btn btn-white" style={{ width: '100%', padding: '16px', fontSize: '16px', border: '1px solid var(--color-border)', marginBottom: '12px', display: 'flex', justifyContent: 'center' }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#25D366" style={{ marginRight: '8px' }}><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    WhatsApp (+256)
+                  </a>
+                  <a href="https://wa.me/243995663282" target="_blank" rel="noopener noreferrer" className="btn btn-white" style={{ width: '100%', padding: '16px', fontSize: '16px', border: '1px solid var(--color-border)', display: 'flex', justifyContent: 'center' }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#25D366" style={{ marginRight: '8px' }}><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    WhatsApp (+243)
+                  </a>
+                </div>
+              )}
             </div>
           </div>
 
@@ -115,19 +145,19 @@ export default function Home() {
                 <img src="https://i.pravatar.cc/100?img=13" className="avatar" alt="User 3" />
               </div>
               <p style={{ fontSize: '14px', fontWeight: '600', textDecoration: 'underline' }}>
-                143.4k+ Customer Reviews
+                143.4k+ Clearances Handled
               </p>
             </div>
             
             {/* Stats Overlaid */}
-            <div className="flex gap-8 mt-auto ml-auto" style={{ backgroundColor: 'rgba(0,0,0,0.15)', padding: '24px 32px', borderRadius: '16px', backdropFilter: 'blur(8px)' }}>
+            <div className="flex flex-wrap gap-8 mt-auto ml-auto" style={{ backgroundColor: 'rgba(0,0,0,0.15)', padding: '24px 32px', borderRadius: '16px', backdropFilter: 'blur(8px)' }}>
               <div className="stats-card">
                 <div className="stats-number">15+</div>
                 <div className="stats-label">Years Of Experience</div>
               </div>
               <div className="stats-card">
                 <div className="stats-number">20+</div>
-                <div className="stats-label">Countries Served</div>
+                <div className="stats-label">Borders Cleared</div>
               </div>
               <div className="stats-card">
                 <div className="stats-number">99.2%</div>
@@ -148,7 +178,7 @@ export default function Home() {
               <img src="https://picsum.photos/id/1073/800/600" alt="About CRFBC" />
               <div style={{ position: 'absolute', bottom: '24px', left: '24px', backgroundColor: 'white', padding: '16px 24px', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
                 <p style={{ fontSize: '24px', fontWeight: '700', color: 'var(--color-primary)' }}>10M+</p>
-                <p style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-dark)' }}>Parcels Delivered</p>
+                <p style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-dark)' }}>Shipments Declared</p>
               </div>
             </div>
           </div>
@@ -156,23 +186,23 @@ export default function Home() {
           {/* Content */}
           <div className="md:w-1/2 w-full">
             <div style={{ color: 'var(--color-primary)', fontWeight: '600', fontSize: '14px', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '16px' }}>Who We Are</div>
-            <h2 style={{ fontSize: '48px', fontWeight: '700', lineHeight: '1.1', marginBottom: '24px', letterSpacing: '-1px' }}>
-              Bridging the gap in global logistics.
+            <h2 className="section-title">
+              Masters of border declaration and freight forwarding.
             </h2>
             <p style={{ color: 'var(--color-text-muted)', fontSize: '16px', lineHeight: '1.7', marginBottom: '24px' }}>
-              CRFBC is a premier logistics and supply chain provider dedicated to making global trade accessible and efficient. With state-of-the-art tracking, dedicated transport networks, and a deep understanding of customs regulations, we ensure your cargo reaches its destination safely and on time.
+              CRFBC is an industry leader specializing in border declaration, customs clearing, and robust freight forwarding by land and sea. We streamline complex cross-border processes, ensuring strict compliance and efficient movement of your cargo.
             </p>
             <ul style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '32px' }}>
-              {['24/7 Dedicated Customer Support', 'Advanced Real-Time Tracking', 'Eco-Friendly Transport Options'].map((item, idx) => (
+              {['Expert Customs Clearing', 'Land & Sea Freight Solutions', 'Rapid Border Declaration'].map((item, idx) => (
                 <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '12px', fontWeight: '500' }}>
                   <CheckCircle2 className="text-primary" size={20} />
                   {item}
                 </li>
               ))}
             </ul>
-            <button className="btn btn-primary btn-animated">
+            <a href="/about" className="btn btn-primary btn-animated">
               Read Our Story <ArrowRight size={18} style={{ marginLeft: '8px' }} />
-            </button>
+            </a>
           </div>
         </div>
       </section>
@@ -183,11 +213,11 @@ export default function Home() {
           
           {/* Left */}
           <div className="md:w-1/3">
-            <h2 style={{ fontSize: '48px', fontWeight: '700', lineHeight: '1.1', marginBottom: '24px', letterSpacing: '-1px' }}>
+            <h2 className="section-title">
               Our Logistics<br />Services
             </h2>
             <p style={{ color: 'var(--color-text-muted)', lineHeight: '1.6', maxWidth: '300px', fontSize: '15px' }}>
-              End-to-end logistics solutions built to support businesses of every size.
+              End-to-end solutions focused on clearing and forwarding across borders.
             </p>
           </div>
 
@@ -247,7 +277,7 @@ export default function Home() {
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '60px' }}>
             <div style={{ color: 'var(--color-primary)', fontWeight: '600', fontSize: '14px', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '12px' }}>Insights & News</div>
-            <h2 style={{ fontSize: '48px', fontWeight: '700', letterSpacing: '-1px' }}>Latest from our Blog</h2>
+            <h2 className="section-title" style={{ marginBottom: 0 }}>Latest from our Blog</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

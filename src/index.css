@@ -63,6 +63,8 @@ ul {
 .relative { position: relative; }
 .absolute { position: absolute; }
 .overflow-hidden { overflow: hidden; }
+.flex-wrap { flex-wrap: wrap; }
+.hidden { display: none; }
 
 .grid { display: grid; }
 .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
@@ -76,6 +78,12 @@ ul {
   .md\:flex-row { flex-direction: row; }
   .md\:hidden { display: none; }
   .md\:flex { display: flex; }
+  .md\:absolute { position: absolute; }
+  .header-bg { background-color: white; }
+}
+
+.header-bg {
+  background-color: white;
 }
 
 .text-primary { color: var(--color-primary); }
@@ -168,7 +176,7 @@ ul {
   background-image: url('/hero-bg.jpg');
   background-size: cover;
   background-position: center;
-  padding-top: 140px;
+  padding-top: 0;
   padding-bottom: 60px;
 }
 
@@ -403,4 +411,59 @@ ul {
 }
 .hamburger-btn.open svg {
   transform: rotate(90deg);
+}
+
+/* Responsive Typography to fix mobile overflow */
+.hero-title {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.05;
+  margin-bottom: 24px;
+  letter-spacing: -1px;
+}
+.section-title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  letter-spacing: -1px;
+}
+.page-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  letter-spacing: -1px;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 40px;
+  }
+  .section-title {
+    font-size: 32px;
+  }
+  .page-title {
+    font-size: 36px;
+  }
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  /* Ensure images don't cause overflow */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  /* Fix tracking widget on small screens */
+  .tracking-widget {
+    padding: 16px;
+  }
+  .tab-btn {
+    padding: 8px;
+    font-size: 13px;
+  }
+  .hero-section {
+    padding-top: 30px;
+    min-height: auto;
+  }
 }
