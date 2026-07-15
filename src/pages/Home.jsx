@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Search, Ship, Warehouse, Truck, ClipboardList, ArrowRight, CheckCircle2 } from 'lucide-react';
 import aboutImg from '../assets/aboutjpg.jpg';
 import PartnersSlider from '../components/PartnersSlider';
@@ -51,7 +52,20 @@ export default function Home() {
           zIndex: 1
         }}></div>
 
-        <div className="container flex flex-col md:flex-row gap-8 relative" style={{ height: '100%', zIndex: 2 }}>
+        {/* Minimal Header for Home Page */}
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', zIndex: 10, padding: '24px 0' }}>
+          <div className="container flex justify-between items-center">
+            <Link to="/" className="flex items-center gap-3">
+              <img src="/icon.png" alt="Carefour Business Logo" style={{ height: '48px' }} />
+              <span style={{ fontSize: '22px', fontWeight: '800', letterSpacing: '-0.5px', color: 'var(--color-text-dark)' }}>Carefour Business</span>
+            </Link>
+            <Link to="/quotes" className="btn btn-primary btn-animated" style={{ padding: '12px 28px' }}>
+              Get A Quote
+            </Link>
+          </div>
+        </div>
+
+        <div className="container flex flex-col md:flex-row gap-8 relative" style={{ height: '100%', zIndex: 2, paddingTop: '100px' }}>
           
           {/* Left Column */}
           <div className="md:w-1/2 flex flex-col justify-center">
