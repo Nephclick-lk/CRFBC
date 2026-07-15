@@ -1,5 +1,6 @@
 import React from 'react';
 import { CheckCircle2, Shield, Globe, Clock } from 'lucide-react';
+import PartnersSlider from '../components/PartnersSlider';
 
 export default function About() {
   return (
@@ -7,7 +8,7 @@ export default function About() {
       {/* Header Section */}
       <section style={{ backgroundColor: 'var(--color-bg-dark)', color: 'white', padding: '120px 0 80px', textAlign: 'center' }}>
         <div className="container">
-          <h1 className="page-title" style={{ marginBottom: '24px' }}>About CRFBC</h1>
+          <h1 className="page-title" style={{ marginBottom: '24px' }}>About Carefour Business</h1>
           <p style={{ fontSize: '18px', maxWidth: '700px', margin: '0 auto', opacity: 0.9, lineHeight: '1.6' }}>
             Border declaration and customs clearing specialists for trucks crossing by land and containers arriving by sea. Helping businesses move cargo across borders legally, fast, and without hassle.
           </p>
@@ -26,7 +27,7 @@ export default function About() {
               Getting trucks and ships through borders — legally and fast
             </h2>
             <p style={{ color: 'var(--color-text-muted)', fontSize: '16px', lineHeight: '1.7', marginBottom: '24px' }}>
-              CRFBC exists to solve one problem: moving cargo across borders without delays, fines, or confusion. We specialize in border declaration and customs clearing for trucks crossing land borders and sea containers arriving at ports. Every shipment we handle goes through rigorous compliance checks so your cargo clears on time, every time.
+              Carefour Business exists to solve one problem: moving cargo across borders without delays, fines, or confusion. We specialize in border declaration and customs clearing for trucks crossing land borders and sea containers arriving at ports. Every shipment we handle goes through rigorous compliance checks so your cargo clears on time, every time.
             </p>
             <p style={{ color: 'var(--color-text-muted)', fontSize: '16px', lineHeight: '1.7', marginBottom: '32px' }}>
               Whether you operate a fleet of trucks moving between Uganda, DRC, Kenya, and Rwanda, or import containerized goods through Mombasa or Dar es Salaam, our team manages the full clearance process end to end. We handle documentation, duty assessment, verification, and cargo release.
@@ -63,7 +64,7 @@ export default function About() {
                 <Globe size={32} />
               </div>
               <h3 style={{ fontSize: '20px', fontWeight: '600', marginBottom: '16px' }}>Border Post Expertise</h3>
-              <p style={{ color: 'var(--color-text-muted)', lineHeight: '1.6' }}>We know every border post from Mpondwe to Mutukula. Our agents are on the ground and understand local procedures.</p>
+              <p style={{ color: 'var(--color-text-muted)', lineHeight: '1.6' }}>We know every border post including Pondwe, Mutukula, Tunduma, Nakonde, Sakania, and Kasumbalesa. Our agents are on the ground and understand local procedures.</p>
             </div>
 
             <div style={{ backgroundColor: 'white', padding: '40px', borderRadius: '16px', textAlign: 'center', boxShadow: '0 4px 15px rgba(0,0,0,0.05)' }}>
@@ -84,6 +85,9 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      {/* Partners Slider */}
+      <PartnersSlider />
     </div>
   );
 }

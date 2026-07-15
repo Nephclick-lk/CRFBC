@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Search, Ship, Warehouse, Truck, ClipboardList, ArrowRight, CheckCircle2 } from 'lucide-react';
+import aboutImg from '../assets/aboutjpg.jpg';
+import PartnersSlider from '../components/PartnersSlider';
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('Tracking');
@@ -112,7 +114,7 @@ export default function Home() {
                 <div style={{ padding: '20px 0' }}>
                   <p style={{ color: 'var(--color-text-muted)', marginBottom: '16px', fontSize: '15px' }}>Select a date to check available departure and arrival schedules.</p>
                   <div className="search-input-wrapper">
-                    <input type="date" style={{ paddingLeft: '16px' }} />
+                    <input type="date" defaultValue={new Date().toISOString().split('T')[0]} style={{ paddingLeft: '16px' }} />
                   </div>
                   <button className="btn btn-primary btn-animated" style={{ width: '100%', padding: '16px', fontSize: '16px' }}>
                     Check Availability
@@ -175,7 +177,7 @@ export default function Home() {
           {/* Image */}
           <div className="md:w-1/2 w-full">
             <div className="about-image-wrapper">
-              <img src="https://picsum.photos/id/1073/800/600" alt="About CRFBC" />
+              <img src={aboutImg} alt="About Carefour Business" />
               <div style={{ position: 'absolute', bottom: '24px', left: '24px', backgroundColor: 'white', padding: '16px 24px', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
                 <p style={{ fontSize: '24px', fontWeight: '700', color: 'var(--color-primary)' }}>10M+</p>
                 <p style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-text-dark)' }}>Shipments Declared</p>
@@ -190,7 +192,7 @@ export default function Home() {
               Border clearance experts for trucks crossing by land and ships arriving by sea.
             </h2>
             <p style={{ color: 'var(--color-text-muted)', fontSize: '16px', lineHeight: '1.7', marginBottom: '24px' }}>
-              CRFBC is a border declaration and customs clearing company built for businesses that move freight across East African borders. We handle every step of the clearance process for trucks and sea containers, ensuring your cargo moves without delays, fines, or compliance issues.
+              Carefour Business is a border declaration and customs clearing company built for businesses that move freight across East African borders. We handle every step of the clearance process for trucks and sea containers, ensuring your cargo moves without delays, fines, or compliance issues.
             </p>
             <ul style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '32px' }}>
               {['Truck & Container Customs Clearing', 'Land Border Declaration & Compliance', 'Sea Freight Forwarding & Clearance'].map((item, idx) => (
@@ -330,6 +332,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Partners Slider */}
+      <PartnersSlider />
 
     </div>
   );

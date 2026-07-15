@@ -1,82 +1,85 @@
 import React, { useState } from 'react';
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet, Link, useLocation } from 'react-router-dom';
 import { Menu, X, MessageCircle } from 'lucide-react';
 
 export default function Layout() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isChatOpen, setIsChatOpen] = useState(false);
+  const location = useLocation();
 
   return (
     <div className="flex flex-col min-h-screen relative">
       <div style={{ overflowX: 'hidden', width: '100%', flex: 1, display: 'flex', flexDirection: 'column' }}>
-        {/* Header */}
-        <header className="z-50 relative md:absolute top-0 left-0 right-0 header-bg" style={{ borderBottom: '1px solid var(--color-border)' }}>
-          <nav className="container flex justify-between items-center relative" style={{ height: '80px' }}>
-            {/* Logo */}
-            <Link to="/" className="flex items-center gap-3">
-              <img src="/icon.png" alt="Carrefour Business Logo" style={{ height: '48px' }} />
-              <span style={{ fontSize: '22px', fontWeight: '800', letterSpacing: '-0.5px', color: 'var(--color-text-dark)' }}>Carrefour Business</span>
-            </Link>
-
-            {/* Desktop Menu */}
-            <div className="hidden md:flex items-center gap-8">
-              <Link to="/" className="nav-link" style={{ fontWeight: 600 }}>Home</Link>
-              <Link to="/about" className="nav-link">About Us</Link>
-              <Link to="/#services" className="nav-link">Our Services</Link>
-              <Link to="/#solutions" className="nav-link">Solutions</Link>
-              <Link to="/#tracking" className="nav-link">Tracking</Link>
-              <Link to="/contact" className="nav-link">Contact Us</Link>
-            </div>
-
-            {/* Right Actions */}
-            <div className="hidden md:flex items-center">
-              <button className="btn btn-white btn-animated" style={{ boxShadow: '0 4px 14px rgba(0,0,0,0.05)', padding: '12px 28px' }}>
-                Get A Quote
-              </button>
-            </div>
-
-            {/* Mobile Menu Button (Hamburger) */}
-            <button 
-              className={`md:hidden hamburger-btn ${isMobileMenuOpen ? 'open' : ''}`}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label="Toggle Menu"
-            >
-              {isMobileMenuOpen ? <X size={20} className="text-primary" /> : <Menu size={20} />}
-            </button>
-
-            {/* Mobile Dropdown */}
-            <div 
-              className="md:hidden"
-              style={{
-                position: 'absolute',
-                top: 'calc(100% + 8px)',
-                left: '16px',
-                right: '16px',
-                backgroundColor: 'white',
-                borderRadius: '16px',
-                boxShadow: '0 10px 40px rgba(0,0,0,0.1)',
-                transition: 'all 0.3s ease',
-                overflow: 'hidden',
-                zIndex: 50,
-                opacity: isMobileMenuOpen ? 1 : 0,
-                transform: isMobileMenuOpen ? 'translateY(0)' : 'translateY(-16px)',
-                pointerEvents: isMobileMenuOpen ? 'auto' : 'none'
-              }}
-            >
-              <div className="flex flex-col gap-6" style={{ padding: '24px' }}>
-                <Link to="/" className="nav-link" style={{ fontSize: '18px' }} onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
-                <Link to="/about" className="nav-link" style={{ fontSize: '18px' }} onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
-                <Link to="/#services" className="nav-link" style={{ fontSize: '18px' }} onClick={() => setIsMobileMenuOpen(false)}>Our Services</Link>
-                <Link to="/#solutions" className="nav-link" style={{ fontSize: '18px' }} onClick={() => setIsMobileMenuOpen(false)}>Solutions</Link>
-                <Link to="/#tracking" className="nav-link" style={{ fontSize: '18px' }} onClick={() => setIsMobileMenuOpen(false)}>Tracking</Link>
-                <Link to="/contact" className="nav-link" style={{ fontSize: '18px' }} onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link>
-                <button className="btn btn-primary w-full" style={{ marginTop: '8px' }} onClick={() => setIsMobileMenuOpen(false)}>
-                  Get A Quote
-                </button>
+        {/* Header - Hidden on Home Page */}
+        {location.pathname !== '/' && (
+          <header className="header-bg relative md:absolute" style={{ borderBottom: '1px solid var(--color-border)', width: '100%', top: 0, left: 0, zIndex: 50 }}>
+            <nav className="container flex justify-between items-center relative" style={{ height: '80px' }}>
+              {/* Logo */}
+              <Link to="/" className="flex items-center gap-3">
+                <img src="/icon.png" alt="Carefour Business Logo" style={{ height: '48px' }} />
+                <span style={{ fontSize: '22px', fontWeight: '800', letterSpacing: '-0.5px', color: 'var(--color-text-dark)' }}>Carefour Business</span>
+              </Link>
+  
+              {/* Desktop Menu */}
+              <div className="hidden md:flex items-center gap-8">
+                <Link to="/" className="nav-link" style={{ fontWeight: location.pathname === '/' ? 700 : 500 }}>Home</Link>
+                <Link to="/about" className="nav-link" style={{ fontWeight: location.pathname === '/about' ? 700 : 500 }}>About Us</Link>
+                <Link to="/services" className="nav-link" style={{ fontWeight: location.pathname === '/services' ? 700 : 500 }}>Our Services</Link>
+                <Link to="/solutions" className="nav-link" style={{ fontWeight: location.pathname === '/solutions' ? 700 : 500 }}>Solutions</Link>
+                <Link to="/tracking" className="nav-link" style={{ fontWeight: location.pathname === '/tracking' ? 700 : 500 }}>Tracking</Link>
+                <Link to="/contact" className="nav-link" style={{ fontWeight: location.pathname === '/contact' ? 700 : 500 }}>Contact Us</Link>
               </div>
-            </div>
-          </nav>
-        </header>
+  
+              {/* Right Actions */}
+              <div className="hidden md:flex items-center">
+                <Link to="/quotes" className="btn btn-white btn-animated" style={{ boxShadow: '0 4px 14px rgba(0,0,0,0.05)', padding: '12px 28px' }}>
+                  Get A Quote
+                </Link>
+              </div>
+  
+              {/* Mobile Menu Button (Hamburger) */}
+              <button 
+                className={`md:hidden hamburger-btn ${isMobileMenuOpen ? 'open' : ''}`}
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                aria-label="Toggle Menu"
+              >
+                {isMobileMenuOpen ? <X size={20} className="text-primary" /> : <Menu size={20} />}
+              </button>
+  
+              {/* Mobile Dropdown */}
+              <div 
+                className="md:hidden"
+                style={{
+                  position: 'absolute',
+                  top: 'calc(100% + 8px)',
+                  left: '16px',
+                  right: '16px',
+                  backgroundColor: 'white',
+                  borderRadius: '16px',
+                  boxShadow: '0 10px 40px rgba(0,0,0,0.1)',
+                  transition: 'all 0.3s ease',
+                  overflow: 'hidden',
+                  zIndex: 50,
+                  opacity: isMobileMenuOpen ? 1 : 0,
+                  transform: isMobileMenuOpen ? 'translateY(0)' : 'translateY(-16px)',
+                  pointerEvents: isMobileMenuOpen ? 'auto' : 'none'
+                }}
+              >
+                <div className="flex flex-col gap-6" style={{ padding: '24px' }}>
+                  <Link to="/" className="nav-link" style={{ fontSize: '18px' }} onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
+                  <Link to="/about" className="nav-link" style={{ fontSize: '18px' }} onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
+                  <Link to="/services" className="nav-link" style={{ fontSize: '18px' }} onClick={() => setIsMobileMenuOpen(false)}>Our Services</Link>
+                  <Link to="/solutions" className="nav-link" style={{ fontSize: '18px' }} onClick={() => setIsMobileMenuOpen(false)}>Solutions</Link>
+                  <Link to="/tracking" className="nav-link" style={{ fontSize: '18px' }} onClick={() => setIsMobileMenuOpen(false)}>Tracking</Link>
+                  <Link to="/contact" className="nav-link" style={{ fontSize: '18px' }} onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link>
+                  <Link to="/quotes" className="btn btn-primary" style={{ marginTop: '8px', width: '100%', textAlign: 'center', display: 'block' }} onClick={() => setIsMobileMenuOpen(false)}>
+                    Get A Quote
+                  </Link>
+                </div>
+              </div>
+            </nav>
+          </header>
+        )}
 
         {/* Main Content */}
         <main className="flex-1">
@@ -91,8 +94,8 @@ export default function Layout() {
               {/* Branding Column */}
               <div className="md:col-span-1">
                 <Link to="/" className="flex items-center gap-3 mb-4">
-                  <img src="/icon.png" alt="Carrefour Business Logo" style={{ height: '56px' }} />
-                  <span style={{ fontSize: '24px', fontWeight: '800', letterSpacing: '-0.5px', color: 'white' }}>Carrefour Business</span>
+                  <img src="/icon.png" alt="Carefour Business Logo" style={{ height: '56px' }} />
+                  <span style={{ fontSize: '24px', fontWeight: '800', letterSpacing: '-0.5px', color: 'white' }}>Carefour Business</span>
                 </Link>
                 <p style={{ color: '#999', fontSize: '14px', lineHeight: '1.6' }}>
                   Border declaration, clearing, and freight forwarding by land and sea designed for speed, transparency, and peace of mind.
@@ -104,7 +107,7 @@ export default function Layout() {
                 <h4 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '20px' }}>Quick Links</h4>
                 <Link to="/" className="footer-link">Home</Link>
                 <Link to="/about" className="footer-link">About Us</Link>
-                <Link to="/#services" className="footer-link">Our Services</Link>
+                <Link to="/services" className="footer-link">Our Services</Link>
                 <Link to="/contact" className="footer-link">Contact Us</Link>
               </div>
 
@@ -112,18 +115,18 @@ export default function Layout() {
               <div>
                 <h4 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '20px' }}>Resources</h4>
                 <Link to="/#blogs" className="footer-link">Blogs & News</Link>
-                <Link to="/#solutions" className="footer-link">Industry Solutions</Link>
+                <Link to="/solutions" className="footer-link">Industry Solutions</Link>
                 <Link to="/contact" className="footer-link">Help Center</Link>
               </div>
 
               {/* Contact */}
               <div>
                 <h4 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '20px' }}>Contact Us</h4>
-                <p className="footer-link">info@crfbc.com</p>
+                <p className="footer-link">info@carefourbusiness.com</p>
                 <a href="https://wa.me/256782207113" target="_blank" rel="noopener noreferrer" className="footer-link" style={{ display: 'inline-block' }}>+256 782207113 (WhatsApp)</a><br/>
                 <a href="https://wa.me/243995663282" target="_blank" rel="noopener noreferrer" className="footer-link" style={{ display: 'inline-block' }}>+243 995663282 (WhatsApp)</a>
                 <p className="footer-link" style={{ marginTop: '16px', color: '#666' }}>
-                  CRFBC Headquarters<br />Border Customs Zone
+                  Carefour Business Headquarters<br />Border Customs Zone
                 </p>
               </div>
               
@@ -132,7 +135,7 @@ export default function Layout() {
             {/* Bottom Bar (Policies) */}
             <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t" style={{ borderColor: '#333' }}>
               <p style={{ color: '#666', fontSize: '14px', marginBottom: '16px' }}>
-                &copy; {new Date().getFullYear()} CRFBC. All rights reserved.
+                &copy; {new Date().getFullYear()} Carefour Business. All rights reserved.
               </p>
               <div className="flex gap-6">
                 <Link to="/privacy-policy" className="footer-link" style={{ marginBottom: 0 }}>Privacy Policy</Link>
@@ -216,7 +219,7 @@ export default function Layout() {
               }}
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/></svg>
-              CRFBC Chatbot
+              Carefour Business Chatbot
             </button>
           </div>
         )}

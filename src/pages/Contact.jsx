@@ -44,7 +44,7 @@ export default function Contact() {
               </div>
               <div>
                 <h4 style={{ fontWeight: '600', fontSize: '16px', marginBottom: '8px' }}>Email Address</h4>
-                <p style={{ color: 'var(--color-text-muted)' }}>info@crfbc.com</p>
+                <p style={{ color: 'var(--color-text-muted)' }}>info@carefourbusiness.com</p>
               </div>
             </div>
 
@@ -54,7 +54,7 @@ export default function Contact() {
               </div>
               <div>
                 <h4 style={{ fontWeight: '600', fontSize: '16px', marginBottom: '8px' }}>Office Location</h4>
-                <p style={{ color: 'var(--color-text-muted)' }}>CRFBC Headquarters<br />Border Customs Zone</p>
+                <p style={{ color: 'var(--color-text-muted)' }}>Carefour Business Headquarters<br />Border Customs Zone</p>
               </div>
             </div>
           </div>

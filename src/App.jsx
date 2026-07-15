@@ -7,6 +7,10 @@ import Quotes from './pages/Quotes';
 import Documents from './pages/Documents';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Admin from './pages/Admin';
+import Services from './pages/Services';
+import Solutions from './pages/Solutions';
+import Tracking from './pages/Tracking';
 
 function App() {
   return (
@@ -19,7 +23,11 @@ function App() {
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="quotes" element={<Quotes />} />
           <Route path="documents" element={<Documents />} />
+          <Route path="services" element={<Services />} />
+          <Route path="solutions" element={<Solutions />} />
+          <Route path="tracking" element={<Tracking />} />
         </Route>
+        <Route path="/admin" element={<Admin />} />
       </Routes>
     </BrowserRouter>
   );
