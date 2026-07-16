@@ -35,6 +35,7 @@ export default function Services() {
       {/* Header */}
       <section style={{ backgroundColor: 'var(--color-bg-dark)', color: 'white', padding: '100px 0', textAlign: 'center' }}>
         <div className="container">
+          <div style={{ color: 'var(--color-primary)', fontWeight: '600', fontSize: '14px', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px' }}>WHAT WE DO</div>
           <h1 className="page-title" style={{ marginBottom: '24px' }}>Our Services</h1>
           <p style={{ fontSize: '18px', maxWidth: '700px', margin: '0 auto', opacity: 0.9, lineHeight: '1.6' }}>
             Comprehensive border declaration, customs clearing, and freight forwarding solutions engineered for speed, transparency, and total compliance.

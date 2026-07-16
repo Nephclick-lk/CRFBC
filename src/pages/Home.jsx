@@ -7,6 +7,7 @@ import PartnersSlider from '../components/PartnersSlider';
 export default function Home() {
   const [activeTab, setActiveTab] = useState('Tracking');
   const [trackingType, setTrackingType] = useState('Booking Number');
+  const [openFaq, setOpenFaq] = useState(null);
 
   return (
     <div style={{ backgroundColor: '#ffffff' }}>
@@ -168,7 +169,7 @@ export default function Home() {
             {/* Stats Overlaid */}
             <div className="flex flex-wrap gap-8 mt-auto ml-auto" style={{ backgroundColor: 'rgba(0,0,0,0.15)', padding: '24px 32px', borderRadius: '16px', backdropFilter: 'blur(8px)' }}>
                 <div className="stats-card">
-                  <div className="stats-number">15+</div>
+                  <div className="stats-number">5+</div>
                   <div className="stats-label">Years in Border Clearance</div>
                 </div>
                 <div className="stats-card">
@@ -343,6 +344,41 @@ export default function Home() {
               </div>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section id="faq" style={{ padding: '120px 0', backgroundColor: '#f9f9f9' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+            <div style={{ color: 'var(--color-primary)', fontWeight: '600', fontSize: '14px', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '12px' }}>Got Questions?</div>
+            <h2 className="section-title" style={{ marginBottom: 0 }}>Frequently Asked Questions</h2>
+          </div>
+          <div style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '24px' }}>
+            {[
+              { q: 'What makes your company different from other clearing agents?', a: 'We have over 5 years of experience in border clearance and offer dedicated, transparent, and customized clearance solutions with real-time tracking.' },
+              { q: 'What is the estimated transit time for my shipment?', a: 'Transit times depend on the transport mode and border post. We expedite clearance to ensure minimal delays at the border or port.' },
+              { q: 'What documents are required to get started?', a: 'Standard documents include Commercial Invoice, Packing List, Bill of Lading/Airway Bill, Certificate of Origin, and relevant compliance certificates.' },
+              { q: 'What happens if my cargo is delayed?', a: 'In the rare event of a delay, our team immediately investigates the issue, communicates transparently, and works to resolve compliance or logistical hurdles swiftly.' },
+              { q: 'How long does customs clearance take?', a: 'For air freight, it typically takes 1-3 days. For sea freight and land border trucks, clearance generally takes 3-5 days depending on the volume and documentation readiness.' }
+            ].map((faq, idx) => (
+              <div 
+                key={idx} 
+                style={{ padding: '24px', backgroundColor: '#ffffff', borderRadius: '12px', border: '1px solid var(--color-border)', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', cursor: 'pointer', transition: 'all 0.2s ease' }}
+                onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <h3 style={{ fontSize: '18px', fontWeight: '700', color: 'var(--color-text-dark)', margin: 0 }}>{faq.q}</h3>
+                  <div style={{ backgroundColor: 'rgba(223, 58, 53, 0.1)', color: 'var(--color-primary)', width: '32px', height: '32px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold' }}>
+                    {openFaq === idx ? '-' : '+'}
+                  </div>
+                </div>
+                <div style={{ maxHeight: openFaq === idx ? '200px' : '0', overflow: 'hidden', transition: 'max-height 0.3s ease' }}>
+                  <p style={{ color: 'var(--color-text-muted)', lineHeight: '1.6', fontSize: '15px', marginTop: '16px', marginBottom: 0 }}>{faq.a}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

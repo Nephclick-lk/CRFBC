@@ -15,6 +15,7 @@ export default function Documents() {
         
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-xl gap-md animate-fade-in">
           <div>
+            <div className="text-secondary font-semibold text-sm tracking-widest uppercase mb-sm">PAPERWORK HUB</div>
             <h1 className="font-headline-lg text-primary mb-xs">Customs Documentation</h1>
             <p className="text-on-surface-variant font-body-md">Manage, upload, and verify all necessary clearance documents.</p>
           </div>

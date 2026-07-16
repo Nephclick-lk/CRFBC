@@ -38,6 +38,7 @@ export default function Tracking() {
       {/* Search Section */}
       <section style={{ backgroundColor: 'var(--color-bg-dark)', padding: '80px 0', textAlign: 'center' }}>
         <div className="container" style={{ maxWidth: '800px' }}>
+          <div style={{ color: 'var(--color-primary)', fontWeight: '600', fontSize: '14px', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px' }}>REAL-TIME CARGO STATUS</div>
           <h1 className="page-title" style={{ color: 'white', marginBottom: '24px' }}>Track Your Cargo</h1>
           <p style={{ color: '#aaa', fontSize: '18px', marginBottom: '40px' }}>
             Enter your Waybill, Booking, or Container number for real-time clearance and transit updates.

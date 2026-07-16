@@ -6,6 +6,7 @@ export default function Contact() {
     <div style={{ padding: '120px 0', backgroundColor: '#ffffff', minHeight: '80vh' }}>
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+          <div style={{ color: 'var(--color-primary)', fontWeight: '600', fontSize: '14px', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px' }}>WE ARE HERE TO HELP</div>
           <h1 className="page-title" style={{ marginBottom: '16px' }}>Contact Us</h1>
           <p style={{ color: 'var(--color-text-muted)', fontSize: '18px', maxWidth: '600px', margin: '0 auto' }}>
             Need to clear a truck at the border or release a container from port? Get in touch with our clearance team.
@@ -23,8 +24,8 @@ export default function Contact() {
               </div>
               <div>
                 <h4 style={{ fontWeight: '600', fontSize: '16px', marginBottom: '8px' }}>Phone / WhatsApp</h4>
-                <a href="https://wa.me/256782207113" target="_blank" rel="noopener noreferrer" style={{ display: 'block', color: 'var(--color-text-muted)', marginBottom: '4px' }}>+256 782207113</a>
-                <a href="https://wa.me/243995663282" target="_blank" rel="noopener noreferrer" style={{ display: 'block', color: 'var(--color-text-muted)' }}>+243 995663282</a>
+                <a href="https://wa.me/256782207113" target="_blank" rel="noopener noreferrer" style={{ display: 'block', color: 'var(--color-text-muted)', marginBottom: '4px' }}>+256 782 207 113</a>
+                <a href="https://wa.me/243995663282" target="_blank" rel="noopener noreferrer" style={{ display: 'block', color: 'var(--color-text-muted)' }}>+243 995 663 282</a>
               </div>
             </div>
 

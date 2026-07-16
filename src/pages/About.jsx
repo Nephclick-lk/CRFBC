@@ -8,6 +8,7 @@ export default function About() {
       {/* Header Section */}
       <section style={{ backgroundColor: 'var(--color-bg-dark)', color: 'white', padding: '120px 0 80px', textAlign: 'center' }}>
         <div className="container">
+          <div style={{ color: 'var(--color-primary)', fontWeight: '600', fontSize: '14px', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px' }}>DISCOVER OUR STORY</div>
           <h1 className="page-title" style={{ marginBottom: '24px' }}>About Carefour Business</h1>
           <p style={{ fontSize: '18px', maxWidth: '700px', margin: '0 auto', opacity: 0.9, lineHeight: '1.6' }}>
             Border declaration and customs clearing specialists for trucks crossing by land and containers arriving by sea. Helping businesses move cargo across borders legally, fast, and without hassle.

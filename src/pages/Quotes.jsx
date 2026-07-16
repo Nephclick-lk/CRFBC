@@ -25,6 +25,7 @@ export default function Quotes() {
       <div className="container" style={{ maxWidth: '1100px' }}>
         
         <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+          <div style={{ color: 'var(--color-text-muted)', fontWeight: '600', fontSize: '14px', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px' }}>GET AN ESTIMATE</div>
           <h1 className="page-title" style={{ color: 'var(--color-primary)' }}>Request a Freight Quote</h1>
           <p style={{ fontSize: '18px', color: 'var(--color-text-muted)', maxWidth: '600px', margin: '0 auto', lineHeight: '1.6' }}>
             Get transparent pricing for truck border clearance, sea container customs processing, and freight forwarding across East Africa. No hidden fees.

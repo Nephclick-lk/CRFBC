@@ -123,8 +123,8 @@ export default function Layout() {
               <div>
                 <h4 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '20px' }}>Contact Us</h4>
                 <p className="footer-link">info@carefourbusiness.com</p>
-                <a href="https://wa.me/256782207113" target="_blank" rel="noopener noreferrer" className="footer-link" style={{ display: 'inline-block' }}>+256 782207113 (WhatsApp)</a><br/>
-                <a href="https://wa.me/243995663282" target="_blank" rel="noopener noreferrer" className="footer-link" style={{ display: 'inline-block' }}>+243 995663282 (WhatsApp)</a>
+                <a href="https://wa.me/256782207113" target="_blank" rel="noopener noreferrer" className="footer-link" style={{ display: 'inline-block' }}>+256 782 207 113 (WhatsApp)</a><br/>
+                <a href="https://wa.me/243995663282" target="_blank" rel="noopener noreferrer" className="footer-link" style={{ display: 'inline-block' }}>+243 995 663 282 (WhatsApp)</a>
                 <p className="footer-link" style={{ marginTop: '16px', color: '#666' }}>
                   Carefour Business Headquarters<br />Border Customs Zone
                 </p>
