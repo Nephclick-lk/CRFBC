@@ -1,6 +1,7 @@
 import React from 'react';
 import { CheckCircle2, Shield, Globe, Clock } from 'lucide-react';
 import PartnersSlider from '../components/PartnersSlider';
+import aboutImg from '../assets/about-us.jpg';
 
 export default function About() {
   return (
@@ -20,7 +21,7 @@ export default function About() {
       <section style={{ padding: '80px 0' }}>
         <div className="container flex flex-col md:flex-row gap-16 items-center">
           <div className="md:w-1/2">
-            <img src="https://picsum.photos/id/1015/800/600" alt="About Us" style={{ borderRadius: '16px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)', width: '100%' }} />
+            <img src={aboutImg} alt="About Us" style={{ borderRadius: '16px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)', width: '100%' }} />
           </div>
           <div className="md:w-1/2">
             <div style={{ color: 'var(--color-primary)', fontWeight: '600', fontSize: '14px', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '16px' }}>Our Mission</div>
