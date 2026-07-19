@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard';
 import Quotes from './pages/Quotes';
 import Documents from './pages/Documents';
 import About from './pages/About';
+import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 import Admin from './pages/Admin';
 import Services from './pages/Services';
@@ -22,6 +23,13 @@ function ScrollToTop() {
   return null;
 }
 
+import AdminLayout from './components/admin/AdminLayout';
+import AdminDashboard from './pages/admin/AdminDashboard';
+import AdminSchedules from './pages/admin/AdminSchedules';
+import AdminMessages from './pages/admin/AdminMessages';
+import AdminBorder from './pages/admin/AdminBorder';
+import AdminBlogs from './pages/admin/AdminBlogs';
+
 function App() {
   return (
     <BrowserRouter>
@@ -30,6 +38,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
+          <Route path="blog" element={<Blog />} />
           <Route path="contact" element={<Contact />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="quotes" element={<Quotes />} />
@@ -38,7 +47,15 @@ function App() {
           <Route path="solutions" element={<Solutions />} />
           <Route path="tracking" element={<Tracking />} />
         </Route>
-        <Route path="/admin" element={<Admin />} />
+        
+        {/* Admin Routes */}
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<AdminDashboard />} />
+          <Route path="schedules" element={<AdminSchedules />} />
+          <Route path="messages" element={<AdminMessages />} />
+          <Route path="border" element={<AdminBorder />} />
+          <Route path="blogs" element={<AdminBlogs />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

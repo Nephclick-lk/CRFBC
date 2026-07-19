@@ -1,32 +1,35 @@
 import React from 'react';
 import { Truck, Ship, ClipboardList, Warehouse, CheckCircle2, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export default function Services() {
+  const { t } = useTranslation();
+
   const services = [
     {
       icon: <Truck size={48} strokeWidth={1.5} />,
-      title: 'Truck Border Clearance',
-      description: 'End-to-end declaration and clearing for trucks at all major East African land border posts. We handle all documentation, compliance checks, and fast-track processing to keep your fleet moving without costly delays.',
-      features: ['Pre-clearance documentation', 'Duty and tax assessment', 'Physical verification support', 'Transit bonds management']
+      title: t('Truck Border Clearance'),
+      description: t('End-to-end declaration and clearing for trucks at all major East African land border posts. We handle all documentation, compliance checks, and fast-track processing to keep your fleet moving without costly delays.'),
+      features: [t('Pre-clearance documentation'), t('Duty and tax assessment'), t('Physical verification support'), t('Transit bonds management')]
     },
     {
       icon: <Ship size={48} strokeWidth={1.5} />,
-      title: 'Sea Freight & Port Clearance',
-      description: 'Comprehensive customs clearance for sea containers arriving at Mombasa, Dar es Salaam, and other regional ports. We ensure your imported goods are released quickly and efficiently.',
-      features: ['Bill of Lading processing', 'Port charges negotiation', 'Demurrage prevention', 'Last-mile delivery coordination']
+      title: t('Sea Freight & Port Clearance'),
+      description: t('Comprehensive customs clearance for sea containers arriving at Mombasa, Dar es Salaam, and other regional ports. We ensure your imported goods are released quickly and efficiently.'),
+      features: [t('Bill of Lading processing'), t('Port charges negotiation'), t('Demurrage prevention'), t('Last-mile delivery coordination')]
     },
     {
       icon: <ClipboardList size={48} strokeWidth={1.5} />,
-      title: 'Border Declaration Filing',
-      description: 'Accurate, timely, and fully compliant border declaration filing for all cargo types. Our experts understand the nuances of regional customs regulations to eliminate the risk of penalties.',
-      features: ['Tariff classification', 'Electronic single window filing', 'Certificate of origin processing', 'Exemption handling']
+      title: t('Border Declaration Filing'),
+      description: t('Accurate, timely, and fully compliant border declaration filing for all cargo types. Our experts understand the nuances of regional customs regulations to eliminate the risk of penalties.'),
+      features: [t('Tariff classification'), t('Electronic single window filing'), t('Certificate of origin processing'), t('Exemption handling')]
     },
     {
       icon: <Warehouse size={48} strokeWidth={1.5} />,
-      title: 'Warehousing & Logistics',
-      description: 'Secure storage solutions and integrated logistics management. Whether you need temporary storage at the border or long-term warehousing, we provide safe and trackable solutions.',
-      features: ['Bonded warehousing', 'Inventory management', 'Cross-docking', 'Cargo consolidation']
+      title: t('Warehousing & Logistics'),
+      description: t('Secure storage solutions and integrated logistics management. Whether you need temporary storage at the border or long-term warehousing, we provide safe and trackable solutions.'),
+      features: [t('Bonded warehousing'), t('Inventory management'), t('Cross-docking'), t('Cargo consolidation')]
     }
   ];
 
@@ -35,10 +38,10 @@ export default function Services() {
       {/* Header */}
       <section style={{ backgroundColor: 'var(--color-bg-dark)', color: 'white', padding: '100px 0', textAlign: 'center' }}>
         <div className="container">
-          <div style={{ color: 'var(--color-primary)', fontWeight: '600', fontSize: '14px', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px' }}>WHAT WE DO</div>
-          <h1 className="page-title" style={{ marginBottom: '24px' }}>Our Services</h1>
+          <div style={{ color: 'var(--color-primary)', fontWeight: '600', fontSize: '14px', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px' }}>{t('WHAT WE DO')}</div>
+          <h1 className="page-title" style={{ marginBottom: '24px' }}>{t('Our Services')}</h1>
           <p style={{ fontSize: '18px', maxWidth: '700px', margin: '0 auto', opacity: 0.9, lineHeight: '1.6' }}>
-            Comprehensive border declaration, customs clearing, and freight forwarding solutions engineered for speed, transparency, and total compliance.
+            {t('Comprehensive border declaration, customs clearing, and freight forwarding solutions engineered for speed, transparency, and total compliance.')}
           </p>
         </div>
       </section>
@@ -69,7 +72,7 @@ export default function Services() {
 
                   <div style={{ marginTop: '40px' }}>
                     <Link to="/quotes" className="btn btn-primary btn-animated" style={{ padding: '12px 24px' }}>
-                      Get a Quote for this Service <ArrowRight size={18} style={{ marginLeft: '8px' }} />
+                      {t('Get a Quote for this Service')} <ArrowRight size={18} style={{ marginLeft: '8px' }} />
                     </Link>
                   </div>
                 </div>
