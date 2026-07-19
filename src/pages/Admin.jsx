@@ -4,6 +4,66 @@ import { Link } from 'react-router-dom';
 
 export default function Admin() {
   const [activeTab, setActiveTab] = useState('dashboard');
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    if (email === 'arthurnkongolo@gmail.com' && password === 'carfour') {
+      setIsAuthenticated(true);
+      setError('');
+    } else {
+      setError('Invalid email or password');
+    }
+  };
+
+  if (!isAuthenticated) {
+    return (
+      <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f4f6f8' }}>
+        <div style={{ backgroundColor: 'white', padding: '40px', borderRadius: '16px', boxShadow: '0 10px 40px rgba(0,0,0,0.05)', width: '100%', maxWidth: '400px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '32px' }}>
+            <h1 style={{ fontSize: '24px', fontWeight: 'bold', color: 'var(--color-text-dark)' }}>Admin Login</h1>
+            <p style={{ color: 'var(--color-text-muted)' }}>Sign in to the Carefour control panel</p>
+          </div>
+          
+          <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+            {error && <div style={{ color: '#df3a35', backgroundColor: '#df3a3515', padding: '12px', borderRadius: '8px', fontSize: '14px', textAlign: 'center' }}>{error}</div>}
+            
+            <div>
+              <label style={{ display: 'block', fontSize: '14px', fontWeight: '600', marginBottom: '8px' }}>Email</label>
+              <input 
+                type="email" 
+                required 
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid var(--color-border)', outline: 'none' }} 
+              />
+            </div>
+            
+            <div>
+              <label style={{ display: 'block', fontSize: '14px', fontWeight: '600', marginBottom: '8px' }}>Password</label>
+              <input 
+                type="password" 
+                required 
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', border: '1px solid var(--color-border)', outline: 'none' }} 
+              />
+            </div>
+            
+            <button type="submit" className="btn btn-primary" style={{ padding: '14px', fontSize: '16px', marginTop: '8px' }}>
+              Login
+            </button>
+            <Link to="/" style={{ display: 'block', textAlign: 'center', color: 'var(--color-text-muted)', fontSize: '14px', marginTop: '16px', textDecoration: 'underline' }}>
+              Return to Website
+            </Link>
+          </form>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="flex h-screen bg-gray-100" style={{ backgroundColor: '#f9f9f9', minHeight: '100vh', display: 'flex' }}>

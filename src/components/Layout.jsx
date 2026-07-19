@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
-import { Menu, X, MessageCircle } from 'lucide-react';
+import { Menu, X, MessageCircle, Globe } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export default function Layout() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isChatOpen, setIsChatOpen] = useState(false);
   const location = useLocation();
+  const { t, i18n } = useTranslation();
+
+  const toggleLanguage = () => {
+    i18n.changeLanguage(i18n.language === 'en' ? 'fr' : 'en');
+  };
 
   return (
     <div className="flex flex-col min-h-screen relative">
@@ -22,18 +28,22 @@ export default function Layout() {
   
               {/* Desktop Menu */}
               <div className="hidden md:flex items-center gap-8">
-                <Link to="/" className="nav-link" style={{ fontWeight: location.pathname === '/' ? 700 : 500 }}>Home</Link>
-                <Link to="/about" className="nav-link" style={{ fontWeight: location.pathname === '/about' ? 700 : 500 }}>About Us</Link>
-                <Link to="/services" className="nav-link" style={{ fontWeight: location.pathname === '/services' ? 700 : 500 }}>Our Services</Link>
-                <Link to="/solutions" className="nav-link" style={{ fontWeight: location.pathname === '/solutions' ? 700 : 500 }}>Solutions</Link>
-                <Link to="/tracking" className="nav-link" style={{ fontWeight: location.pathname === '/tracking' ? 700 : 500 }}>Tracking</Link>
-                <Link to="/contact" className="nav-link" style={{ fontWeight: location.pathname === '/contact' ? 700 : 500 }}>Contact Us</Link>
+                <Link to="/" className="nav-link" style={{ fontWeight: location.pathname === '/' ? 700 : 500 }}>{t('Home')}</Link>
+                <Link to="/about" className="nav-link" style={{ fontWeight: location.pathname === '/about' ? 700 : 500 }}>{t('About Us')}</Link>
+                <Link to="/services" className="nav-link" style={{ fontWeight: location.pathname === '/services' ? 700 : 500 }}>{t('Our Services')}</Link>
+                <Link to="/solutions" className="nav-link" style={{ fontWeight: location.pathname === '/solutions' ? 700 : 500 }}>{t('Solutions')}</Link>
+                <Link to="/tracking" className="nav-link" style={{ fontWeight: location.pathname === '/tracking' ? 700 : 500 }}>{t('Tracking')}</Link>
+                <Link to="/contact" className="nav-link" style={{ fontWeight: location.pathname === '/contact' ? 700 : 500 }}>{t('Contact Us')}</Link>
               </div>
   
               {/* Right Actions */}
-              <div className="hidden md:flex items-center">
+              <div className="hidden md:flex items-center gap-4">
+                <button onClick={toggleLanguage} className="flex items-center gap-2 text-sm font-semibold text-gray-700 hover:text-primary transition-colors">
+                  <img src={i18n.language === 'en' ? '/fr-flag.png' : '/en-flag.png'} alt="Language Flag" style={{ width: '22px', height: '16px', objectFit: 'cover', borderRadius: '2px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }} />
+                  {i18n.language === 'en' ? 'FR' : 'EN'}
+                </button>
                 <Link to="/quotes" className="btn btn-white btn-animated" style={{ boxShadow: '0 4px 14px rgba(0,0,0,0.05)', padding: '12px 28px' }}>
-                  Get A Quote
+                  {t('Get A Quote')}
                 </Link>
               </div>
   
@@ -66,14 +76,20 @@ export default function Layout() {
                 }}
               >
                 <div className="flex flex-col gap-6" style={{ padding: '24px' }}>
-                  <Link to="/" className="nav-link" style={{ fontSize: '18px' }} onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
-                  <Link to="/about" className="nav-link" style={{ fontSize: '18px' }} onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
-                  <Link to="/services" className="nav-link" style={{ fontSize: '18px' }} onClick={() => setIsMobileMenuOpen(false)}>Our Services</Link>
-                  <Link to="/solutions" className="nav-link" style={{ fontSize: '18px' }} onClick={() => setIsMobileMenuOpen(false)}>Solutions</Link>
-                  <Link to="/tracking" className="nav-link" style={{ fontSize: '18px' }} onClick={() => setIsMobileMenuOpen(false)}>Tracking</Link>
-                  <Link to="/contact" className="nav-link" style={{ fontSize: '18px' }} onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link>
+                  <Link to="/" className="nav-link" style={{ fontSize: '18px' }} onClick={() => setIsMobileMenuOpen(false)}>{t('Home')}</Link>
+                  <Link to="/about" className="nav-link" style={{ fontSize: '18px' }} onClick={() => setIsMobileMenuOpen(false)}>{t('About Us')}</Link>
+                  <Link to="/services" className="nav-link" style={{ fontSize: '18px' }} onClick={() => setIsMobileMenuOpen(false)}>{t('Our Services')}</Link>
+                  <Link to="/solutions" className="nav-link" style={{ fontSize: '18px' }} onClick={() => setIsMobileMenuOpen(false)}>{t('Solutions')}</Link>
+                  <Link to="/tracking" className="nav-link" style={{ fontSize: '18px' }} onClick={() => setIsMobileMenuOpen(false)}>{t('Tracking')}</Link>
+                  <Link to="/contact" className="nav-link" style={{ fontSize: '18px' }} onClick={() => setIsMobileMenuOpen(false)}>{t('Contact Us')}</Link>
+                  
+                  <button onClick={() => { toggleLanguage(); setIsMobileMenuOpen(false); }} className="flex items-center gap-2 text-lg font-semibold text-gray-700 hover:text-primary transition-colors mt-2">
+                    <img src={i18n.language === 'en' ? '/fr-flag.png' : '/en-flag.png'} alt="Language Flag" style={{ width: '26px', height: '20px', objectFit: 'cover', borderRadius: '2px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }} />
+                    {i18n.language === 'en' ? 'Switch to French (FR)' : 'Switch to English (EN)'}
+                  </button>
+
                   <Link to="/quotes" className="btn btn-primary" style={{ marginTop: '8px', width: '100%', textAlign: 'center', display: 'block' }} onClick={() => setIsMobileMenuOpen(false)}>
-                    Get A Quote
+                    {t('Get A Quote')}
                   </Link>
                 </div>
               </div>
@@ -98,35 +114,35 @@ export default function Layout() {
                   <span style={{ fontSize: '24px', fontWeight: '800', letterSpacing: '-0.5px', color: 'white' }}>Carefour Business</span>
                 </Link>
                 <p style={{ color: '#999', fontSize: '14px', lineHeight: '1.6' }}>
-                  Border declaration, clearing, and freight forwarding by land and sea designed for speed, transparency, and peace of mind.
+                  {t('footer_desc')}
                 </p>
               </div>
 
               {/* Quick Links */}
               <div>
-                <h4 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '20px' }}>Quick Links</h4>
-                <Link to="/" className="footer-link">Home</Link>
-                <Link to="/about" className="footer-link">About Us</Link>
-                <Link to="/services" className="footer-link">Our Services</Link>
-                <Link to="/contact" className="footer-link">Contact Us</Link>
+                <h4 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '20px' }}>{t('Quick Links')}</h4>
+                <Link to="/" className="footer-link">{t('Home')}</Link>
+                <Link to="/about" className="footer-link">{t('About Us')}</Link>
+                <Link to="/services" className="footer-link">{t('Our Services')}</Link>
+                <Link to="/contact" className="footer-link">{t('Contact Us')}</Link>
               </div>
 
               {/* Resources */}
               <div>
-                <h4 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '20px' }}>Resources</h4>
-                <Link to="/#blogs" className="footer-link">Blogs & News</Link>
-                <Link to="/solutions" className="footer-link">Industry Solutions</Link>
-                <Link to="/contact" className="footer-link">Help Center</Link>
+                <h4 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '20px' }}>{t('Resources')}</h4>
+                <Link to="/#blogs" className="footer-link">{t('Blogs & News')}</Link>
+                <Link to="/solutions" className="footer-link">{t('Industry Solutions')}</Link>
+                <Link to="/contact" className="footer-link">{t('Help Center')}</Link>
               </div>
 
               {/* Contact */}
               <div>
-                <h4 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '20px' }}>Contact Us</h4>
+                <h4 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '20px' }}>{t('Contact Us')}</h4>
                 <p className="footer-link">info@carefourbusiness.com</p>
                 <a href="https://wa.me/256782207113" target="_blank" rel="noopener noreferrer" className="footer-link" style={{ display: 'inline-block' }}>+256 782 207 113 (WhatsApp)</a><br/>
                 <a href="https://wa.me/243995663282" target="_blank" rel="noopener noreferrer" className="footer-link" style={{ display: 'inline-block' }}>+243 995 663 282 (WhatsApp)</a>
                 <p className="footer-link" style={{ marginTop: '16px', color: '#666' }}>
-                  Carefour Business Headquarters<br />Border Customs Zone
+                  {t('Carefour Business Headquarters')}<br />{t('Border Customs Zone')}
                 </p>
               </div>
               
@@ -135,11 +151,11 @@ export default function Layout() {
             {/* Bottom Bar (Policies) */}
             <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t" style={{ borderColor: '#333' }}>
               <p style={{ color: '#666', fontSize: '14px', marginBottom: '16px' }}>
-                &copy; {new Date().getFullYear()} Carefour Business. All rights reserved.
+                &copy; {new Date().getFullYear()} Carefour Business. {t('All rights reserved.')}
               </p>
               <div className="flex gap-6">
-                <Link to="/privacy-policy" className="footer-link" style={{ marginBottom: 0 }}>Privacy Policy</Link>
-                <Link to="/terms" className="footer-link" style={{ marginBottom: 0 }}>Terms of Service</Link>
+                <Link to="/privacy-policy" className="footer-link" style={{ marginBottom: 0 }}>{t('Privacy Policy')}</Link>
+                <Link to="/terms" className="footer-link" style={{ marginBottom: 0 }}>{t('Terms of Service')}</Link>
               </div>
             </div>
           </div>

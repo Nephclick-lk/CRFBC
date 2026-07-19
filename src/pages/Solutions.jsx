@@ -24,8 +24,8 @@ export default function Solutions() {
     },
     {
       icon: <Cpu size={40} />,
-      title: 'Technology & Electronics',
-      description: 'High-value electronics are sensitive and prone to high tariffs. We ensure accurate HS classification and secure, fast-tracked processing to protect your valuable shipments.',
+      title: 'Sub-contracting',
+      description: 'We act as your trusted sub-contracting partner for customs clearance and border declarations, ensuring seamless integration with your existing logistics operations.',
       color: '#059669'
     }
   ];
