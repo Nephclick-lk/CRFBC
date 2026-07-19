@@ -43,14 +43,14 @@ export default function Home() {
           <div className="container flex justify-between items-center">
             <Link to="/" className="flex items-center gap-3">
               <img src="/icon.png" alt="Carefour Business Logo" style={{ height: '48px' }} />
-              <span style={{ fontSize: '22px', fontWeight: '800', letterSpacing: '-0.5px', color: 'var(--color-text-dark)' }}>Carefour Business</span>
+              <span className="hidden sm:inline-block" style={{ fontSize: '22px', fontWeight: '800', letterSpacing: '-0.5px', color: 'var(--color-text-dark)' }}>Carefour Business</span>
             </Link>
-            <div className="flex items-center gap-4">
-              <button onClick={toggleLanguage} className="flex items-center gap-2 text-sm font-semibold text-gray-800 hover:text-primary transition-colors bg-white px-3 py-2 rounded-lg" style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}>
+            <div className="flex items-center gap-2 sm:gap-4">
+              <button onClick={toggleLanguage} className="flex items-center gap-2 text-sm font-semibold text-gray-800 hover:text-primary transition-colors bg-white px-2 py-2 sm:px-3 rounded-lg whitespace-nowrap" style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}>
                 <img src={i18n.language === 'en' ? '/fr-flag.png' : '/en-flag.png'} alt="Language Flag" style={{ width: '22px', height: '16px', objectFit: 'cover', borderRadius: '2px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }} />
                 {i18n.language === 'en' ? 'FR' : 'EN'}
               </button>
-              <Link to="/quotes" className="btn btn-primary btn-animated" style={{ padding: '12px 28px' }}>
+              <Link to="/quotes" className="btn btn-primary btn-animated hidden sm:inline-flex" style={{ padding: '12px 28px' }}>
                 {t('Get A Quote')}
               </Link>
             </div>

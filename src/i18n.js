@@ -8,6 +8,7 @@ const resources = {
       "About Us": "About Us",
       "Our Services": "Our Services",
       "Solutions": "Solutions",
+      "Client Portal": "Client Portal",
       "Tracking": "Tracking",
       "Contact Us": "Contact Us",
       "Get A Quote": "Get A Quote",
@@ -102,6 +103,7 @@ const resources = {
       "BLOGS_SUBTITLE": "LATEST ARTICLES",
       "Our Latest News & Insights": "Our Latest News & Insights",
       "Stay updated with the latest in cross-border logistics.": "Stay updated with the latest in cross-border logistics.",
+      "Blog": "Blog",
       
       "WE ARE HERE TO HELP": "WE ARE HERE TO HELP",
       "Need to clear a truck at the border or release a container from port? Get in touch with our clearance team.": "Need to clear a truck at the border or release a container from port? Get in touch with our clearance team.",
@@ -171,6 +173,7 @@ const resources = {
       "About Us": "À Propos",
       "Our Services": "Nos Services",
       "Solutions": "Solutions",
+      "Client Portal": "Portail Client",
       "Tracking": "Suivi",
       "Contact Us": "Contactez-nous",
       "Get A Quote": "Obtenir un Devis",
@@ -265,6 +268,7 @@ const resources = {
       "BLOGS_SUBTITLE": "DERNIERS ARTICLES",
       "Our Latest News & Insights": "Nos Dernières Actualités & Perspectives",
       "Stay updated with the latest in cross-border logistics.": "Restez informé des dernières nouveautés en logistique transfrontalière.",
+      "Blog": "Blog",
       
       "WE ARE HERE TO HELP": "NOUS SOMMES LÀ POUR VOUS AIDER",
       "Need to clear a truck at the border or release a container from port? Get in touch with our clearance team.": "Besoin de dédouaner un camion à la frontière ou de libérer un conteneur du port ? Contactez notre équipe de dédouanement.",

@@ -45,6 +45,11 @@ export default function PartnersSlider() {
                 e.currentTarget.style.filter = 'grayscale(100%)'; 
                 e.currentTarget.style.opacity = 0.7; 
               }}
+              onClick={() => {
+                if (logo === dgiLogo) {
+                  window.open('https://douane.gouv.cd/', '_blank');
+                }
+              }}
             />
           ))}
         </div>

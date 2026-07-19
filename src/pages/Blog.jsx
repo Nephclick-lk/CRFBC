@@ -1,15 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { supabase } from '../supabase';
 
 export default function Blog() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchBlogs();
+  }, []);
+
+  const fetchBlogs = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('blog_posts')
+        .select('*')
+        .eq('is_published', true)
+        .order('published_at', { ascending: false });
+
+      if (error) throw error;
+      setBlogs(data || []);
+    } catch (err) {
+      console.error('Error fetching blogs:', err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div style={{ backgroundColor: '#ffffff', minHeight: '80vh' }}>
       <section style={{ backgroundColor: 'var(--color-bg-dark)', color: 'white', padding: '120px 0 80px', textAlign: 'center' }}>
-        <div className="container">
+        <div className="container px-4">
           <div style={{ color: 'var(--color-primary)', fontWeight: '600', fontSize: '14px', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px' }}>
             {t('BLOGS_SUBTITLE')}
           </div>
@@ -21,42 +44,46 @@ export default function Blog() {
       </section>
 
       <section style={{ padding: '80px 0', backgroundColor: '#f9f9f9' }}>
-        <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="blog-card">
-              <div className="relative overflow-hidden"><img src="https://picsum.photos/id/1050/600/400" alt="Blog 1" /></div>
-              <div className="blog-content">
-                <div className="blog-date">{t('blog1_date')}</div>
-                <h3 className="blog-title">{t('blog1_title')}</h3>
-                <p className="blog-desc">{t('blog1_desc')}</p>
-                <button className="btn btn-ghost" style={{ padding: '12px 0', marginTop: '16px', color: 'var(--color-primary)', fontWeight: '600' }}>
-                  {t('Read More')} <ArrowRight size={16} style={{ marginLeft: '4px' }}/>
-                </button>
-              </div>
+        <div className="container px-4">
+          {loading ? (
+            <div className="text-center py-20 text-gray-500">Loading blogs...</div>
+          ) : blogs.length === 0 ? (
+            <div className="text-center py-20 text-gray-500">
+              No articles published yet. Check back soon!
             </div>
-            <div className="blog-card">
-              <div className="relative overflow-hidden"><img src="https://picsum.photos/id/1067/600/400" alt="Blog 2" /></div>
-              <div className="blog-content">
-                <div className="blog-date">{t('blog2_date')}</div>
-                <h3 className="blog-title">{t('blog2_title')}</h3>
-                <p className="blog-desc">{t('blog2_desc')}</p>
-                <button className="btn btn-ghost" style={{ padding: '12px 0', marginTop: '16px', color: 'var(--color-primary)', fontWeight: '600' }}>
-                  {t('Read More')} <ArrowRight size={16} style={{ marginLeft: '4px' }}/>
-                </button>
-              </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {blogs.map((blog) => (
+                <div key={blog.id} className="blog-card flex flex-col h-full bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                  {blog.cover_image_url && (
+                    <div className="relative overflow-hidden h-48">
+                      <img src={blog.cover_image_url} alt={blog.title} className="w-full h-full object-cover transition-transform hover:scale-105 duration-300" />
+                    </div>
+                  )}
+                  <div className="blog-content p-6 flex flex-col flex-1">
+                    <div className="blog-date text-sm text-gray-500 mb-3">
+                      {new Date(blog.published_at || blog.created_at).toLocaleDateString(i18n.language === 'fr' ? 'fr-FR' : 'en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                      })}
+                    </div>
+                    <h3 className="blog-title text-xl font-bold text-gray-800 mb-4 line-clamp-2">{blog.title}</h3>
+                    {/* Render a snippet of the HTML content */}
+                    <div 
+                      className="text-gray-600 mb-6 line-clamp-3 text-sm"
+                      dangerouslySetInnerHTML={{ __html: blog.content.substring(0, 150) + '...' }}
+                    />
+                    <div className="mt-auto">
+                      <button className="flex items-center text-primary font-semibold hover:text-red-700 transition-colors">
+                        {t('Read More')} <ArrowRight size={16} className="ml-2"/>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
-            <div className="blog-card">
-              <div className="relative overflow-hidden"><img src="https://picsum.photos/id/1015/600/400" alt="Blog 3" /></div>
-              <div className="blog-content">
-                <div className="blog-date">{t('blog3_date')}</div>
-                <h3 className="blog-title">{t('blog3_title')}</h3>
-                <p className="blog-desc">{t('blog3_desc')}</p>
-                <button className="btn btn-ghost" style={{ padding: '12px 0', marginTop: '16px', color: 'var(--color-primary)', fontWeight: '600' }}>
-                  {t('Read More')} <ArrowRight size={16} style={{ marginLeft: '4px' }}/>
-                </button>
-              </div>
-            </div>
-          </div>
+          )}
         </div>
       </section>
     </div>

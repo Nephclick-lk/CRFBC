@@ -32,6 +32,7 @@ export default function Layout() {
                 <Link to="/about" className="nav-link" style={{ fontWeight: location.pathname === '/about' ? 700 : 500 }}>{t('About Us')}</Link>
                 <Link to="/services" className="nav-link" style={{ fontWeight: location.pathname === '/services' ? 700 : 500 }}>{t('Our Services')}</Link>
                 <Link to="/solutions" className="nav-link" style={{ fontWeight: location.pathname === '/solutions' ? 700 : 500 }}>{t('Solutions')}</Link>
+                <Link to="/blog" className="nav-link" style={{ fontWeight: location.pathname === '/blog' ? 700 : 500 }}>{t('Blog')}</Link>
                 <Link to="/tracking" className="nav-link" style={{ fontWeight: location.pathname === '/tracking' ? 700 : 500 }}>{t('Tracking')}</Link>
                 <Link to="/contact" className="nav-link" style={{ fontWeight: location.pathname === '/contact' ? 700 : 500 }}>{t('Contact Us')}</Link>
               </div>
@@ -80,6 +81,7 @@ export default function Layout() {
                   <Link to="/about" className="nav-link" style={{ fontSize: '18px' }} onClick={() => setIsMobileMenuOpen(false)}>{t('About Us')}</Link>
                   <Link to="/services" className="nav-link" style={{ fontSize: '18px' }} onClick={() => setIsMobileMenuOpen(false)}>{t('Our Services')}</Link>
                   <Link to="/solutions" className="nav-link" style={{ fontSize: '18px' }} onClick={() => setIsMobileMenuOpen(false)}>{t('Solutions')}</Link>
+                  <Link to="/blog" className="nav-link" style={{ fontSize: '18px' }} onClick={() => setIsMobileMenuOpen(false)}>{t('Blog')}</Link>
                   <Link to="/tracking" className="nav-link" style={{ fontSize: '18px' }} onClick={() => setIsMobileMenuOpen(false)}>{t('Tracking')}</Link>
                   <Link to="/contact" className="nav-link" style={{ fontSize: '18px' }} onClick={() => setIsMobileMenuOpen(false)}>{t('Contact Us')}</Link>
                   
@@ -125,12 +127,13 @@ export default function Layout() {
                 <Link to="/about" className="footer-link">{t('About Us')}</Link>
                 <Link to="/services" className="footer-link">{t('Our Services')}</Link>
                 <Link to="/contact" className="footer-link">{t('Contact Us')}</Link>
+                <Link to="/admin" className="footer-link">{t('Client Portal')}</Link>
               </div>
 
               {/* Resources */}
               <div>
                 <h4 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '20px' }}>{t('Resources')}</h4>
-                <Link to="/#blogs" className="footer-link">{t('Blogs & News')}</Link>
+                <Link to="/blog" className="footer-link">{t('Blogs & News')}</Link>
                 <Link to="/solutions" className="footer-link">{t('Industry Solutions')}</Link>
                 <Link to="/contact" className="footer-link">{t('Help Center')}</Link>
               </div>
